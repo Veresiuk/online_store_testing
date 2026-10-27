@@ -11,3 +11,7 @@ def get_min_stock_threshold() -> int:
         return threshold
     except ValueError:
         return 5
+
+def get_payment_mode() -> str:
+    """Повертає поточний платіжний режим із середовища."""
+    return os.getenv("PAYMENT_MODE", "sandbox")

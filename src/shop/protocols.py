@@ -24,3 +24,12 @@ class ExternalInventoryProvider(Protocol):
     """Асинхронний інтерфейс зовнішнього постачальника."""
     async def fetch_stock_update(self, product_id: int) -> int:
         ...
+        
+class PaymentGateway(Protocol):
+    def pay(self, amount: float) -> str:
+        ...
+
+
+class Notifier(Protocol):
+    def send(self, recipient: str, message: str) -> None:
+        ...
