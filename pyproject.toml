@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "online-store-testing"
+version = "0.1.0"
+description = "Лабораторна робота №6. Автоматизоване тестування Python-програм (Варіант 3)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = [".", "src"]
+asyncio_mode = "auto"
+markers = [
+    "integration: integration tests pipeline",
+]
+
+[tool.coverage.run]
+source = ["shop"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 85
