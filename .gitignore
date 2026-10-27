@@ -8,6 +8,5 @@ venv/
 htmlcov/
 .coverage
 .coverage.*
-report/
 "@*.egg-info/
 **/*.egg-info/
